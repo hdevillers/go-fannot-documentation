@@ -1,22 +1,30 @@
-Welcome to Lumache's documentation!
-===================================
+Welcome to go-FAnnoT's documentation!
+=====================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+About
+-----
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+**go-FAnnoT** is a Functional Annotation Transfer tool suite based on protein homology.
+Briefly, the workflow consists in:
 
-.. note::
+* Building consistant reference databases, extracting data from **UniProt** databases or from other resources.
+* Comparing an input proteom (fasta file with multiple protein entries) to annotate againts the selected reference dabases, using both **local** and **global** sequence alignment tools.
+* Formating annotation information using customizable formating rules.
+* (Optionaly) completing annotation with **InterProScan** predictions.
+* Producing standard sequence annotation files (eg, **embl**, **genbank**).
 
-   This project is under active development.
-
-Contents
---------
+It is written in `Go`. 
 
 .. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Get started
 
-   usage
-   api
+   ./get_started/install.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Detailed usage
+
+   ./usage/retrieve_data.rst
