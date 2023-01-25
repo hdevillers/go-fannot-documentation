@@ -55,7 +55,7 @@ Then, get the source code from our `Github repository <https://github.com/hdevil
     # Clone the repository
     git clone git@github.com:hdevillers/go-fannot.git
 
-Enter the clone repositon and run ``make`` to build binaries:
+Enter the clone repository and run ``make`` to build binaries:
 
 .. code-block:: console
 
