@@ -25,6 +25,25 @@ It is written in `Go`.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Detailed usage
+   :caption: General usage
 
    ./usage/retrieve_data.rst
+   ./usage/refine_data.rst
+   ./usage/build_refdb.rst
+   ./usage/run_fannot.rst
+   ./usage/copy_annot.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Command line arguments
+
+   ./cmd/fannot_run.rst
+   ./cmd/refdb_info.rst
+   ./cmd/up_count.rst
+   ./cmd/up_create.rst
+   ./cmd/up_download.rst
+   ./cmd/up_prune.rst
+   ./cmd/up_split.rst
+   ./cmd/up_subset.rst
+
