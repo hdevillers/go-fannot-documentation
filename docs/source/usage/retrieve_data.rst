@@ -16,9 +16,9 @@ you can download the full **Swiss-Prot** dataset and/or the full **TrEMBL** data
     **go-FAnnoT** tools require the **text** version of the datasets (format ``dat.gz``).
 
 These full datasets represent very large files that include all the taxa while in most cases 
-only a limited number of taxa are needed to annotate a genome. Hence, it is possible to 
+only a limited number of taxa/species are required to annotate a genome. Hence, it is possible to 
 download different subsets of data from the **UniProt** 
-`ftp <https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/>`_
+`ftp <https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/>`_.
 
 
 Download with ``uniprot-download``
@@ -34,8 +34,8 @@ for a given taxonomic division. Hence, for example, to downlaod **Swiss-Prot** e
 
 The script will retrieve the ``metalink`` file from **UniProt**, get the apropriate 
 link that corresponds to the queried division as well as the ``md5`` checksum of the file.
-The downlaoded file is store in a directory named by the release number of **UniProt**.
-Once downloaded, ``md5`` is checked.
+The downlaoded file will be stored in a directory named by the current release number of **UniProt**.
+Once downloaded, ``md5`` will be checked.
 
 To list all the available taxonomic divisions, you can use the ``-D`` argument:
 
@@ -52,3 +52,7 @@ To swith between mirrors, use the ``-m`` argument:
 
 This command allows to download **TrEMBL** entries for **Archaea** organisms via the ``uk`` mirror.
 
+.. note::
+
+    If the checksum fails, we recommend to try another mirror. You can use the argument ``-M`` to 
+    list available mirrors. Otherwise, it is possible to skip the checksum with the argument ``-skip-sum``.
