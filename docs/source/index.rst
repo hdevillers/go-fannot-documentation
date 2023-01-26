@@ -30,6 +30,7 @@ It is written in `Go`.
    ./usage/retrieve_data.rst
    ./usage/refine_data.rst
    ./usage/build_refdb.rst
+   ./usage/formating_rules.rst
    ./usage/run_fannot.rst
    ./usage/copy_annot.rst
 
