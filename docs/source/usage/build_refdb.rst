@@ -53,8 +53,14 @@ Here are the steps to build the three corresponding ``refdb``;
     * ``-u`` indicated the annotations from this dataset are **unreviewed**.
 
 At that step, the three ``refdb`` are created and can be used to run the main script of **go-FAnnoT**.
-The different options ``-g``, ``-w`` and ``-u`` have to used according to the strategy 
-chosen to find gene function. More details are given in the next section: :ref:`Formating rules <Formating rules>`.
+
+.. important::
+    The different options ``-g``, ``-w`` and ``-u`` have to be used according to the strategy 
+    chosen to find gene functions. More details are given in the next section: :ref:`Formating rules <Formating rules>`.
 
 A last option can be activated in a particuler case: if the genes we want to annotate are
-possibly present in the dataset...
+possibly present in the retrieved dataset. This can occure, for example, if specific genes have been
+published before the release of the complete genome annotation. In that case, ``uniprot-create-refdb``
+should be run with the boolean argument ``-e`` (or ``-equal``). With that option, all the input genes that
+have a 100% identity match with a ``refdb`` entry will be directly linked to the corresponding **UniProt** entry.
+

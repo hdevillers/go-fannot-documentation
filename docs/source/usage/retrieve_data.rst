@@ -1,5 +1,5 @@
-Retrieve data
-=============
+Retrieve datasets
+=================
 
 The transfer of functional annotations require high quality reference datasets.
 While it is possible to build and use your own reference datasets, **go-FAnnoT** workflow 
