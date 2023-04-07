@@ -26,20 +26,20 @@ Here are the steps to build the three corresponding ``refdb``;
     .. code-block::
 
         uniprot-create-refdb -i S288c.dat.gz -r S288c -d my_refdb -g \
-            -desc "Saccharomyces cerevisiae S288c genes"
+            -D "Saccharomyces cerevisiae S288c genes"
 
     * ``-i`` is for the input data file,
     * ``-r`` is the ID we want to give to the ``refdb``,
     * ``-d`` is the path to the directory that contains the different ``refdb``,
     * ``-g`` indicates that gene names from this datasets can be copied (boolean argument),
-    * ``-desc`` is a short description of the ``refdb``.
+    * ``-D`` is a short description of the ``refdb``.
 
 #. Create the second ``refdb`` with the second dataset:
 
     .. code-block::
 
         uniprot-create-refdb -i Sacch_expval.dat.gz -r Sacch_expval -d my_refdb -g \
-            -desc "Saccharomycetaceae family, experimental validation" -w 
+            -D "Saccharomycetaceae family, experimental validation" -w 
 
     * ``-w`` indicates that entries from this dataset can **overwrite** matches found with entries from previsou datasets.
 
@@ -48,7 +48,7 @@ Here are the steps to build the three corresponding ``refdb``;
     .. code-block::
 
         uniprot-create-refdb -i Sacch_trembl.dat.gz -r Sacch_trembl -d my_refdb \
-            -desc "Saccharomycetaceae family, from TrEMBL" -u
+            -D "Saccharomycetaceae family, from TrEMBL" -u
 
     * ``-u`` indicated the annotations from this dataset are **unreviewed**.
 
