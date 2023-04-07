@@ -1,7 +1,7 @@
 Refine datasets
 ###############
 
-It is possible to use directly a complete dataset downloaded from **UniProt** (see the :ref:`Retrieve data <Retrieve data>` section).
+It is possible to use directly a complete dataset downloaded from **UniProt** (see the :ref:`Retrieve datasets <Retrieve datasets>` section).
 However, working with a single large reference database will require a lot of memory and computation time.
 In addition, it can result in less consistant annotations as these large datasets contain entries 
 with variable annotation quality and from a wide range of organisms.
