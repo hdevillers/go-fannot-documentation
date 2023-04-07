@@ -154,7 +154,7 @@ Here is the default template for the ``\note`` qualifier:
 
     {
         ...
-        "TemplateNote": "{Prefix}||{BdName}|{BdId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
+        "TemplateNote": "{Prefix}||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
         ...
     }
 
@@ -228,16 +228,89 @@ algorithm (Needleman-Wunsch) and the final candidate is select on the basis of t
 
 The second parameter, ``MaxStatusOW`` deals with fact that, in particular conditions, a previously found annotation
 can be overwritten by a better one. This process relies on the use of a hierarchy between the different ``refdbs``
- (see `Build reference databases <Build reference databases>`). These conditions are the following:
+(see `Build reference databases <Build reference databases>`). These conditions are the following:
 
-* The investigated gene has a possible candidate annotation found in one of the first ``refdbs`` of
-the hierarchy. The similarity status (see `Matching rules <Matching rules>` for details)
-associated to this candidate gene is less than or equal to ``MaxStatusOW``
-* The investigated gene has a better hit in one of the following ``refdbs`` of the hierarchy and both the 
-``refdb`` and the match status allow the overwriting.
+* The investigated gene match with a possible candidate protein found in one of the first ``refdbs`` of the hierarchy. 
+* The hit status (see parameter ``Hit_sta`` in section `Matching rules <Matching rules>`) associated to this candidate protein is less than or equal to ``MaxStatusOW``.
+* A better hit is found in one of the next ``refdbs`` while this latter allows overwritting (see ``-w`` argument of the ``uniprot-create-refdb`` program).
+* The rule associated to this better hit allow overwrite (see parameter ``Ovr_wrt`` in section `Matching rules <Matching rules>`).
 
+If these four conditions are met, then the first hit will be replaced by the new one.
 
 Matching rules
 **************
 
-Blabla
+The last part of the configuration file concernes the definition of the different matching thresholds. Basicaly, 
+the idea here is to define different levels of similarity between the queries and the proteins from the ``refdbs`` to adapt the
+functional annotation transfer. By default, **go-FAnnoT** comes with two matching rules:
+
+.. code-block::
+
+    {
+        "Rules" : [
+            {
+                "Min_sim" : 80.0,
+                "Min_lra" : 0.8,
+                "Pre_ann" : "highly similar to",
+                "Ovr_wrt" : true,
+                "Hit_sta" : 2
+            },
+            {
+                "Min_sim" : 50.0,
+                "Min_lra" : 0.7,
+                "Pre_ann" : "similar to",
+                "Ovr_wrt" : false,
+                "Hit_sta" : 1
+            }
+        ]        {
+            "Min_sim" : 30.0,
+            "Min_lra" : 0.6,
+            "Pre_ann" : "weakly similar to",
+            "Cpy_gen" : false,
+            "Ovr_wrt" : false,
+            "Hit_sta" : 1
+        }
+ are defined in the ``Rules`` array.
+Each of them consists in the definition of 5 parameters:
+
+* ``Min_sim``: Is the minimal protein similarity required to met the matching condition. It is computed on the basis of the global alignment between the query and the hit. It ranges between 0 and 100.
+* ``Min_lra``: Is the minimal length ratio between the two compared proteins. It is computed as follow: the length of the smallest protein between the query and the hit is diveded by the length of the largest one. It ranges between 0 and 1.
+* ``Pre_ann``: Is the prefix value used when filling template having the **field** ``{Prefix}``.
+* ``Ovr_wrt``: Indicate if the hit can be used to overwrite a previously found hit.
+* ``Hit_sta``: Hit status, a numeric indice that characterizes the match. It is the parameter that is compared with ``MaxStatusOW`` to control overwrite.
+
+Default configuration file
+**************************
+
+Considering all the previous section above, the default ``json`` file is the following:
+
+.. code-block::
+
+    {
+        "DefaultNote": "hypothetical protein",
+        "DefaultProduct": "hypothetical protein",
+        "DefaultGeneName": "",
+        "DefaultFunction": "",
+        "TemplateNote": "{Prefix}||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
+        "TemplateProduct": "{ShortDesc}::ToLwr::GnPn",
+        "TemplateGeneName": "{GeneName}",
+        "TemplateFunction": "",
+        "NbHitCheck": 3,
+        "MaxStatusOW": 1,
+        "Rules" : [
+            {
+                "Min_sim" : 80.0,
+                "Min_lra" : 0.8,
+                "Pre_ann" : "highly similar to",
+                "Ovr_wrt" : true,
+                "Hit_sta" : 2
+            },
+            {
+                "Min_sim" : 50.0,
+                "Min_lra" : 0.7,
+                "Pre_ann" : "similar to",
+                "Ovr_wrt" : false,
+                "Hit_sta" : 1
+            }
+        ]
+    }
