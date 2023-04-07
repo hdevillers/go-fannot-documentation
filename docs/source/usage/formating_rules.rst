@@ -262,22 +262,23 @@ functional annotation transfer. By default, **go-FAnnoT** comes with two matchin
                 "Ovr_wrt" : false,
                 "Hit_sta" : 1
             }
-        ]        {
-            "Min_sim" : 30.0,
-            "Min_lra" : 0.6,
-            "Pre_ann" : "weakly similar to",
-            "Cpy_gen" : false,
-            "Ovr_wrt" : false,
-            "Hit_sta" : 1
-        }
- are defined in the ``Rules`` array.
+        ]
+    }
+
+In the ``json`` file, as illustrated above, matching rules are defined in the ``Rules`` array.
 Each of them consists in the definition of 5 parameters:
 
 * ``Min_sim``: Is the minimal protein similarity required to met the matching condition. It is computed on the basis of the global alignment between the query and the hit. It ranges between 0 and 100.
 * ``Min_lra``: Is the minimal length ratio between the two compared proteins. It is computed as follow: the length of the smallest protein between the query and the hit is diveded by the length of the largest one. It ranges between 0 and 1.
 * ``Pre_ann``: Is the prefix value used when filling template having the **field** ``{Prefix}``.
 * ``Ovr_wrt``: Indicate if the hit can be used to overwrite a previously found hit.
-* ``Hit_sta``: Hit status, a numeric indice that characterizes the match. It is the parameter that is compared with ``MaxStatusOW`` to control overwrite.
+* ``Hit_sta``: Hit status, a numeric indice that characterizes the match. It is the parameter that is compared with ``MaxStatusOW`` to control overwrite. **The lower the hit status the lower the similarity**.
+
+.. important::
+
+    Order of matching rules inside the ``Rules`` array is important. They must be given in decreasing order of similarity. Indeed, when a
+    hit is found, proteins are compared considering the first matching rule. If conditions are not met, then, the second matching rule 
+    will considered, and so on. Hence, if the lowest similarity threshold is considered first, then the other matching rules will be always ignored.
 
 Default configuration file
 **************************
