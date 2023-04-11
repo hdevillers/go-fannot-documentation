@@ -154,7 +154,7 @@ Here is the default template for the ``\note`` qualifier:
 
     {
         ...
-        "TemplateNote": "{Prefix}||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
+        "TemplateNote": "{Prefix} ||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
         ...
     }
 
@@ -292,7 +292,7 @@ Considering all the previous section above, the default ``json`` file is the fol
         "DefaultProduct": "hypothetical protein",
         "DefaultGeneName": "",
         "DefaultFunction": "",
-        "TemplateNote": "{Prefix}||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
+        "TemplateNote": "{Prefix} ||{DbName}|{DbId} ||{Species} ||{LocusTag} ||{GeneName} ||{LongDesc}",
         "TemplateProduct": "{ShortDesc}::ToLwr::GnPn",
         "TemplateGeneName": "{GeneName}",
         "TemplateFunction": "",
