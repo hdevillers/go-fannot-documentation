@@ -84,3 +84,9 @@ The ``fannot-run`` program provides one output file (``-o``), which is a tabulat
 * **DBID**: ID of the ``refdb`` that contains the best hit,
 * **HitNum**: The Blast hit number kept (referring to the parameter ``NbHitCheck``, see :ref:`Formating rule <Formating rules>`),
 * **OverWritten**: Indicates if the retained hit has overwritten another hit.
+
+.. important::
+
+    Before copying these generated annotation in the final annotation files (see :ref:`Copy annotation in sequence files <Copy annotation in sequence files>`),
+    we highly recommand an inspection of the tabulated file to check possible issues or to evaluate if matching parameters have to be refined. It
+    is also possible to edit manually specific annotations if required.
