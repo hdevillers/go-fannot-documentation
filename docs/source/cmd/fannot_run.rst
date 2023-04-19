@@ -1,14 +1,14 @@
 ``fannot-run``
 ==============
 
-Description
-***********
+Description of ``fannot-run``
+*****************************
 
 This the main program that runs the different proteins alignments, identifying the putative best hits between
 input proteins and the different ``refdbs``.
 
-Usage
-*****
+Usage of ``fannot-run``
+***********************
 
 .. code-block::
 
@@ -18,8 +18,8 @@ Usage
         -r refdb1,refdb2,refdb3 \
         -d refdb_dir/           
 
-Arguments
-*********
+Arguments of ``fannot-run``
+***************************
 
 +----------------+---------+-----------+----------------------------------------------------------+
 | Argument       | Default | Mandatory | Description                                              |

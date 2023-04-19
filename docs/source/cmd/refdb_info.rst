@@ -1,13 +1,13 @@
 ``refdb-info``
 ==============
 
-Description
-***********
+Description of ``refdb-info``
+*****************************
 
 This program can be use to get information about a given ``refdb``.
 
-Usage
-*****
+Usage of ``refdb-info``
+***********************
 
 .. code-block::
 
@@ -15,8 +15,8 @@ Usage
         -r refdb1      \
         -d refdb_dir/           
 
-Arguments
-*********
+Arguments of ``refdb-info``
+***************************
 
 +----------------+---------+-----------+----------------------------------------------------------+
 | Argument       | Default | Mandatory | Description                                              |
