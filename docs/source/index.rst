@@ -20,7 +20,10 @@ It is written in `Go`.
    :maxdepth: 2
    :caption: Get started
 
+   ./get_started/principles.rst
    ./get_started/install.rst
+   ./get_started/how_cite.rst
+   ./get_started/genomes.rst
 
 .. toctree::
    :hidden:
@@ -37,6 +40,15 @@ It is written in `Go`.
 .. toctree::
    :hidden:
    :maxdepth: 2
+   :caption: Cookbook
+
+   ./cookbook/example.rst
+   ./cookbook/create_fasta.rst
+   ./cookbook/cpy_annot.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
    :caption: Command line arguments
 
    ./cmd/fannot_run.rst
@@ -47,4 +59,5 @@ It is written in `Go`.
    ./cmd/up_prune.rst
    ./cmd/up_split.rst
    ./cmd/up_subset.rst
+   ./cmd/annot_seqfile.rst
 

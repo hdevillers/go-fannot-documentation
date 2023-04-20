@@ -26,23 +26,23 @@ Arguments of ``uniprot-create-refdb``
 | ``-i`` or |br|   | None    | Yes       | Input **UniProt** data file. It can be compressed or not.|
 | ``-input``       |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-r`` or |br|   | None    | Yes       | ID of the ``refdb`` to create.                 |
+| ``-r`` or |br|   | None    | Yes       | ID of the ``refdb`` to create.                           |
 | ``-refdb-id``    |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+
 | ``-d`` or |br|   | None    | Yes       | Directory that contains the ``refdbs``.                  |
 | ``-refdb-dir``   |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-e`` or |br|   | False   | No        | Boolean arguement indicating that the ``refdb`` can      |
+| ``-e`` or |br|   | False   | No        | Boolean arguement indicating that the ``refdb`` can |br| |
 | ``-equal``       |         |           | contain genes that are in the genome to be annotated.    |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-w`` or |br|   | False   | No        | Boolean argument indicating that entries from the        |
+| ``-w`` or |br|   | False   | No        | Boolean argument indicating that entries from the |br|   |
 | ``-overwrite``   |         |           | ``refdb`` can be used to overwrite other hits            |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-u`` or |br|   | False   | No        | Boolean argument indicating that entries from the        |
+| ``-u`` or |br|   | False   | No        | Boolean argument indicating that entries from the |br|   |
 | ``-unreviewed``  |         |           | ``refdb`` are unreviewed.                                |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-g`` or |br|   | False   | No        | Boolean argument indicating that gene names from entries |
-| ``-gene-name``   |         |           | from the ``refdb`` can be transfered.                    |
+| ``-g`` or |br|   | False   | No        | Boolean argument indicating that gene names from |br|    |
+| ``-gene-name``   |         |           | entries from the ``refdb`` can be transfered.            |
 +------------------+---------+-----------+----------------------------------------------------------+
 | ``-D`` or |br|   | None    | No        | Short description of the ``refdb``.                      |
 | ``-description`` |         |           |                                                          |

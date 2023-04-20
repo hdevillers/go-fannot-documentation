@@ -20,24 +20,37 @@ Usage of ``uniprot-subset``
 Arguments of ``uniprot-subset``
 *******************************
 
-+------------------+---------+-----------+----------------------------------------------------------+
-| Argument         | Default | Mandatory | Description                                              |
-+==================+=========+===========+==========================================================+
-| ``-i`` or |br|   | None    | Yes       | Input **UniProt** data file. It can be compressed or not.|
-| ``-input``       |         |           |                                                          |
-+------------------+---------+-----------+----------------------------------------------------------+
-| ``-o`` or |br|   | None    | Yes       | Output **UniProt** pruned data file.                     |
-| ``-output``      |         |           |                                                          |
-+------------------+---------+-----------+----------------------------------------------------------+
-| ``-m`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
-| ``-methionine``  |         |           | that starts with a methionine.                           |
-+------------------+---------+-----------+----------------------------------------------------------+
-| ``-d`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
-| ``-description`` |         |           | that has a short description (found at **DE** lines).    |
-+------------------+---------+-----------+----------------------------------------------------------+
-| ``-f`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
-| ``-function``    |         |           | that has a function description (found at **CC** lines). |
-+------------------+---------+-----------+----------------------------------------------------------+
++-----------------------+---------+-----------+----------------------------------------------------------+
+| Argument              | Default | Mandatory | Description                                              |
++=======================+=========+===========+==========================================================+
+| ``-i`` or |br|        | None    | Yes       | Input **UniProt** data file. It can be compressed or not.|
+| ``-input``            |         |           |                                                          |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-o`` or |br|        | None    | Yes       | Output **UniProt** subset data file.                     |
+| ``-output``           |         |           |                                                          |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-e`` or |br|        | None    | No        | Protein evidence keeping instruction. See details |br|   |
+| ``-evidence-keep``    |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-E`` or |br|        | None    | No        | Protein evidence skiping instruction. See details |br|   |
+| ``-evidence-skip``    |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-t`` or |br|        | None    | No        | Taxonomy keeping instruction. See details |br|           |
+| ``-taxonomy-keep``    |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-T`` or |br|        | None    | No        | Taxonomy skiping instruction. See details |br|           |
+| ``-taxonomy-skip``    |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-d`` or |br|        | None    | No        | Description keeping instruction. See details |br|        |
+| ``-description-keep`` |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-D`` or |br|        | None    | No        | Description skiping instruction. See details |br|        |
+| ``-description-skip`` |         |           | section :ref:`Refine datasets <Refine datasets>`.        |
++-----------------------+---------+-----------+----------------------------------------------------------+
+| ``-l`` or |br|        | 30      | No        | Minimal protein length to keep **UniProt** entries.      |
+| ``-min-length``       |         |           |                                                          |
++-----------------------+---------+-----------+----------------------------------------------------------+
+
 
 .. |br| raw:: html
 

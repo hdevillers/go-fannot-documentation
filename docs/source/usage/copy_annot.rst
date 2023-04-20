@@ -21,7 +21,7 @@ The command line to use is the following:
 
 Where ``annotations.tsv`` is the output of ``fannot-run`` programme and ``<input_annotation_sequences>`` corresponds
 to the initial annotated sequence(s). It can be a single file, a directory path containing only sequence files or a
- *pattern* path such as ``"mydata/*.embl"``.
+*pattern* path such as ``"mydata/*.embl"``.
 
 Here is the details of all the command arguments:
 
