@@ -7,8 +7,8 @@ About
 **go-FAnnoT** is a Functional Annotation Transfer tool suite based on protein homology.
 Briefly, the workflow consists in:
 
-* Building consistant reference databases, extracting data from **UniProt** databases or from other resources.
-* Comparing an input proteom (fasta file with multiple protein entries) to annotate againts the selected reference dabases, using both **local** and **global** sequence alignment tools.
+* Building consistent reference databases, extracting data from **UniProt** databases or from other resources.
+* Comparing an input proteome (fasta file with multiple protein entries) to annotate againts the selected reference dabases, using both **local** and **global** sequence alignment tools.
 * Formating annotation information using customizable formating rules.
 * (Optionaly) completing annotation with **InterProScan** predictions.
 * Producing standard sequence annotation files (eg, **embl**, **genbank**).
