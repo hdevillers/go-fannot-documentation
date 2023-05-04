@@ -123,3 +123,72 @@ The first selection concerns proteins from **SwissProt** associated to *Nakaseom
 
 This will create the file ``dt01.dat.gz`` and return the number of entries selected.
 
+Then, the second selection includes the entries associated to *S. cerevisiae* whose evidence of existence have experimentally
+validated either at the protein level or the transcript level. Here is the command line to create ``dt02.dat.gz``:
+
+.. code-block::
+
+    uniprot-subset                    \
+        -i uniprot_sprot_fungi.dat.gz \
+        -o dt02.dat.gz                \
+        -t "cerevisiae"               \
+        -e "1|2"
+
+The third selection consists in all the entries associated to *Saccharomycetaceae* family, with experimental evidence
+but excluding *S. cerevisiae* and *N. glabratus*. The file ``dt03.dat.gz`` is obtained as follow:
+
+.. code-block::
+
+    uniprot-subset                    \
+        -i uniprot_sprot_fungi.dat.gz \
+        -o dt03.dat.gz                \
+        -t "Saccharomycetaceae"       \
+        -T "cerevisiae|glabrata"      \
+        -e "1|2"
+
+The fourth selection contains entries associated to *Saccharomycetaceae* family, without experimental evidence.
+we can exclude entries from *N. glabratus* as they are already included in the first selection. The 
+following instruction will produce the file ``dt04.dat.gz``:
+
+.. code-block::
+
+    uniprot-subset                    \
+        -i uniprot_sprot_fungi.dat.gz \
+        -o dt04.dat.gz                \
+        -t "Saccharomycetaceae"       \
+        -T "glabrata"                 \
+        -E "1|2"
+
+The last selection, from **TrEMBL**, contains all the entries from *Saccharomycetaceae* species.
+Here is the command line to obtain ``dt05.dat.gz``:
+
+.. code-block::
+
+    uniprot-subset                     \
+        -i uniprot_trembl_fungi.dat.gz \
+        -o dt05.dat.gz                 \
+        -t "Saccharomycetaceae"        \
+
+Step 4: Pruning the selected entries
+------------------------------------
+
+All the entries selected in the previous step may contain uncompleted annotations, pseudo-genes, and so on.
+In order to avoid the transfer of spurious/inconsistent annotations, we recommend to use the ``uniprot-prune``
+program.
+
+To *prune* the 5 previously generated data files, it is possible to use the following **BASH** loop:
+
+.. code-block::
+
+    for i in $(seq 1 5)
+    do
+        uniprot-prune -i dt0${i}.dat.gz -o dt0${i}_pruned.dat.gz -m -d -f
+    done
+
+This will create the *pruned* files denoted ``dt01_pruned.dat.gz`` to ``dt05_pruned.dat.gz``.
+
+Step 5: Create the different ``refdbs``
+---------------------------------------
+
+The ``refdbs`` are built from the different data selection performed in the previous steps
+to be used directly by the main program of **go-FAnnoT**. 
