@@ -1,5 +1,5 @@
-Complete example
-================
+Illustrative example
+====================
 
 To illustrate the functioning of **go-FAnnoT**, here is a complete case
 example that consists in annotating a proteome from a yeast species.
@@ -169,8 +169,8 @@ Here is the command line to obtain ``dt05.dat.gz``:
         -o dt05.dat.gz                 \
         -t "Saccharomycetaceae"        \
 
-Step 4: Pruning the selected entries
-------------------------------------
+Step 4: Prune the selected entries
+----------------------------------
 
 All the entries selected in the previous step may contain uncompleted annotations, pseudo-genes, and so on.
 In order to avoid the transfer of spurious/inconsistent annotations, we recommend to use the ``uniprot-prune``
@@ -191,4 +191,96 @@ Step 5: Create the different ``refdbs``
 ---------------------------------------
 
 The ``refdbs`` are built from the different data selection performed in the previous steps
-to be used directly by the main program of **go-FAnnoT**. 
+to be used directly by the main program of **go-FAnnoT**. They are stored in a dedicated 
+directory, for example ``my_refdbs/``, an consist in a collection of different files, 
+including a **Fasta** of the proteins they contain, **BLAST** database files and a configuration
+file in **JSON**. To create them, use the program ``uniprot-create-refdb``:
+
+.. code-block::
+
+    uniprot-create-refdb                 \
+        -i dt01_pruned.dat.gz            \
+        -r dt01                          \
+        -d my_refdbs/                    \
+        -D "Candida glabrata, SwissProt" \
+        -e
+
+This command creates the ``refdb`` with the ID ``dt01`` in the directory ``my_refdbs``. The boolean
+arguement ``-e`` indicate that this ``refdb`` may contains gene that are present in the genome
+to annotate (i.e., at least from same species).
+
+The four other ``refdbs`` have to be created the same way. Here are the instruction for ``dt02`` and ``dt03``:
+
+.. code-block::
+
+    uniprot-create-refdb                                    \
+        -i dt02_pruned.dat.gz                               \
+        -r dt02                                             \
+        -d my_refdbs/                                       \
+        -D "Saccharomyces cerevisiae, exp. val., SwissProt" \
+        -w
+
+    uniprot-create-refdb                                     \
+        -i dt03_pruned.dat.gz                                \
+        -r dt03                                              \
+        -d my_refdbs/                                        \
+        -D "Saccharomycetaceae family, exp. val., SwissProt" \
+        -w
+
+These two ``refdbs`` are created with the option ``-w`` meaning that entries from them can be used
+to overwrite a hit from a previous ``refdb`` with a lower similarity level.
+
+The following command is used to generate ``dt04``:
+
+.. code-block::
+
+    uniprot-create-refdb                                    \
+        -i dt04_pruned.dat.gz                               \
+        -r dt04                                             \
+        -d my_refdbs/                                       \
+        -D "Saccharomycetaceae family, no. val., SwissProt" \
+
+And the last one, for ``dt5``:
+
+.. code-block::
+
+    uniprot-create-refdb                                    \
+        -i dt05_pruned.dat.gz                               \
+        -r dt05                                             \
+        -d my_refdbs/                                       \
+        -D "Saccharomycetaceae family, unreviewed, TrEMBL"  \
+        -u
+
+Here, the boolean arguement ``-u`` indicates that this ``refdb`` contains unreviewed entries.
+
+Hence, with these 5 command lines, 5 ``refdbs`` denoted ``dt01`` to ``dt05`` have been created
+in the directory ``my_refdbs/``.
+
+Step 6: Run **go-FAnnoT** main program
+---------------------------------------
+
+This step consists in finding for each protein in the query file (``proteins.fasta``) a best hit
+among the different ``refdbs``, taking into account their hierarchy (``dt01`` > ``dt02`` > ... > ``dt05``)
+as well as the possible options such as ``-e`` and ``-w`` (see step 5).
+
+.. code-block::
+
+    fannot-run                      \
+        -i proteins.fasta           \
+        -o annotations.tsv          \
+        -r dt01,dt02,dt03,dt04,dt05 \
+        -d my_refdbs/               
+
+The output of this program is a tabulated text file containing the predicted functional annotations (see details :ref:`here <The output file>`).
+
+Step 7: Check and edit ``annotations.tsv``
+------------------------------------------
+
+This step is optional, but we highly recommend to check the output file ``annotations.tsv`` before copying
+the functional annotations in the **sequence files**. This step can reveal that there are issues in the annotation templating,
+that some thresholds have to be refined or that the selection of ``refdbs`` have to be amended.
+
+Step 8: Copy annotations into **sequence files**
+------------------------------------------------
+
+This is the final step. The functional annotations reported in ``annotations.tsv`` 
