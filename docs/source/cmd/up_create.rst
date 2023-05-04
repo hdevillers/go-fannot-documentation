@@ -41,9 +41,6 @@ Arguments of ``uniprot-create-refdb``
 | ``-u`` or |br|   | False   | No        | Boolean argument indicating that entries from the |br|   |
 | ``-unreviewed``  |         |           | ``refdb`` are unreviewed.                                |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-g`` or |br|   | False   | No        | Boolean argument indicating that gene names from |br|    |
-| ``-gene-name``   |         |           | entries from the ``refdb`` can be transfered.            |
-+------------------+---------+-----------+----------------------------------------------------------+
 | ``-D`` or |br|   | None    | No        | Short description of the ``refdb``.                      |
 | ``-description`` |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+

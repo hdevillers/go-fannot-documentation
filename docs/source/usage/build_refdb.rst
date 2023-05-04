@@ -25,20 +25,19 @@ Here are the steps to build the three corresponding ``refdb``;
 
     .. code-block::
 
-        uniprot-create-refdb -i S288c.dat.gz -r S288c -d my_refdb -g \
+        uniprot-create-refdb -i S288c.dat.gz -r S288c -d my_refdb \
             -D "Saccharomyces cerevisiae S288c genes"
 
     * ``-i`` is for the input data file,
     * ``-r`` is the ID we want to give to the ``refdb``,
     * ``-d`` is the path to the directory that contains the different ``refdb``,
-    * ``-g`` indicates that gene names from this datasets can be copied (boolean argument),
     * ``-D`` is a short description of the ``refdb``.
 
 #. Create the second ``refdb`` with the second dataset:
 
     .. code-block::
 
-        uniprot-create-refdb -i Sacch_expval.dat.gz -r Sacch_expval -d my_refdb -g \
+        uniprot-create-refdb -i Sacch_expval.dat.gz -r Sacch_expval -d my_refdb \
             -D "Saccharomycetaceae family, experimental validation" -w 
 
     * ``-w`` indicates that entries from this dataset can **overwrite** matches found with entries from previsou datasets.
@@ -55,7 +54,7 @@ Here are the steps to build the three corresponding ``refdb``;
 At that step, the three ``refdb`` are created and can be used to run the main script of **go-FAnnoT**.
 
 .. important::
-    The different options ``-g``, ``-w`` and ``-u`` have to be used according to the strategy 
+    The different options ``-w`` and ``-u`` have to be used according to the strategy 
     chosen to find gene functions. More details are given in the next section: :ref:`Formating rules <Formating rules>`.
 
 A last option can be activated in a particuler case: if the genes we want to annotate are
