@@ -13,7 +13,7 @@ closely related genus from the model yeast *Saccharomyces cerevisiae*.
 
 We have to types of files as input:
 
-* **Sequence files**, in **EMBL** or **Genbank**, which contain the structural annotation obtained with a gene prediction tool such as **Augustus** or **Maker**. For the following example, let considers that these files are stored in a directory named ``SeqFile/``. The different sequence file paths will be ``SeqFile/Contig01.embl``, ``SeqFile/Contig02.embl``, and so on.
+* **Sequence files**, in **EMBL** or **Genbank**, which contain the structural annotation obtained with a gene prediction tool such as **Augustus** or **Maker**. For the following example, let considers that these files are stored in a directory named ``SeqFiles/``. The different sequence file paths will be ``SeqFiles/Contig01.embl``, ``SeqFiles/Contig02.embl``, and so on.
 * **Proteome file**, in **Fasta**, which contain all the protein sequences that are structurally defined in the **Sequence files**. This file will be denoted ``proteins.fasta`` in the following sections.
 
 .. important::
@@ -283,4 +283,21 @@ that some thresholds have to be refined or that the selection of ``refdbs`` have
 Step 8: Copy annotations into **sequence files**
 ------------------------------------------------
 
-This is the final step. The functional annotations reported in ``annotations.tsv`` 
+This is the final step. The functional annotations reported in ``annotations.tsv`` can be now
+transferred into the corresponding **sequence files** using the dedicated **Python** script.
+
+First, create the output directory:
+
+.. code-block::
+
+    mkdir AnnotatedSeqFiles
+
+Then, run the script:
+
+.. code-block::
+
+    AnnotationsToSeqFiles.py   \
+        -a annotations.tsv     \
+        -s "SeqFiles/*.embl"   \
+        -o AnnotatedSeqFiles/  \
+        -c 2
