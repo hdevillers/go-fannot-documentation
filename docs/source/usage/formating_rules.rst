@@ -222,7 +222,7 @@ Two parameters have to be set in the configuration file:
 
 The parameter ``NbHitCheck`` controls the number of blast hits for a given protein that are considered as 
 possible candidates for annotation transfer. Indeed, because blast is a local alignment tool, the 
-best hit is not necessary obtained with most globaly conserved protein from the blast database. One of the
+best hit is not necessary obtained with most globally conserved protein from the blast database. One of the
 originalities of **go-FAnnoT** is that the *n* first blast hits are reassessed using a global alignment 
 algorithm (Needleman-Wunsch) and the final candidate is select on the basis of these global alignments.
 
@@ -240,7 +240,7 @@ If these four conditions are met, then the first hit will be replaced by the new
 Matching rules
 **************
 
-The last part of the configuration file concernes the definition of the different matching thresholds. Basicaly, 
+The last part of the configuration file concerns the definition of the different matching thresholds. Basically, 
 the idea here is to define different levels of similarity between the queries and the proteins from the ``refdbs`` to adapt the
 functional annotation transfer. By default, **go-FAnnoT** comes with two matching rules:
 
@@ -269,10 +269,10 @@ In the ``json`` file, as illustrated above, matching rules are defined in the ``
 Each of them consists in the definition of 5 parameters:
 
 * ``Min_sim``: Is the minimal protein similarity required to met the matching condition. It is computed on the basis of the global alignment between the query and the hit. It ranges between 0 and 100.
-* ``Min_lra``: Is the minimal length ratio between the two compared proteins. It is computed as follow: the length of the smallest protein between the query and the hit is diveded by the length of the largest one. It ranges between 0 and 1.
+* ``Min_lra``: Is the minimal length ratio between the two compared proteins. It is computed as follow: the length of the smallest protein between the query and the hit is divided by the length of the largest one. It ranges between 0 and 1.
 * ``Pre_ann``: Is the prefix value used when filling template having the **field** ``{Prefix}``.
 * ``Ovr_wrt``: Indicate if the hit can be used to overwrite a previously found hit.
-* ``Hit_sta``: Hit status, a numeric indice that characterizes the match. It is the parameter that is compared with ``MaxStatusOW`` to control overwrite. **The lower the hit status the lower the similarity**.
+* ``Hit_sta``: Hit status, a numeric index that characterizes the match. It is the parameter that is compared with ``MaxStatusOW`` to control overwrite. **The lower the hit status the lower the similarity**.
 
 .. important::
 

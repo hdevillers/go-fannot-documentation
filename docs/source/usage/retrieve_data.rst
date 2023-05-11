@@ -32,9 +32,9 @@ for a given taxonomic division. Hence, for example, to downlaod **Swiss-Prot** e
 
     uniprot-download -s sprot -d fungi
 
-The script will retrieve the ``metalink`` file from **UniProt**, get the apropriate 
+The script will retrieve the ``metalink`` file from **UniProt**, get the appropriate 
 link that corresponds to the queried division as well as the ``md5`` checksum of the file.
-The downlaoded file will be stored in a directory named by the current release number of **UniProt**.
+The downloaded file will be stored in a directory named by the current release number of **UniProt**.
 Once downloaded, ``md5`` will be checked.
 
 To list all the available taxonomic divisions, you can use the ``-D`` argument:
@@ -44,7 +44,7 @@ To list all the available taxonomic divisions, you can use the ``-D`` argument:
     uniprot-download -D
 
 There are three possible download mirrors (``us`` (default), ``uk`` and ``ch``). 
-To swith between mirrors, use the ``-m`` argument:
+To switch between mirrors, use the ``-m`` argument:
 
 .. code-block:: console
 

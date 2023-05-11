@@ -23,7 +23,7 @@ via most of the recent package manager:
     # Example with Ubuntu
     apt install ncbi-blast+ emboss
 
-**go-FAnnoT** workflow optionaly includes results from **InterProScan**.
+**go-FAnnoT** workflow optionally includes results from **InterProScan**.
 
 Using the **Conda** recipe
 --------------------------
@@ -68,4 +68,4 @@ Enter the clone repository and run ``make`` to build binaries:
     # Install binaries
     make install
 
-By default, binaries a installed in 
+By default, binaries a installed in ``/usr/local/bin/``.

@@ -15,13 +15,13 @@ The main input of ``fannot-run`` is a **fasta** file that contains the proteins 
 
 .. important::
 
-    * The names (IDs) of these proteins must be unique. If different proteins share the same name, collisions may occure during the last step of the process, when rewritting final annotation files.
+    * The names (IDs) of these proteins must be unique. If different proteins share the same name, collisions may occur during the last step of the process, when rewriting final annotation files.
     * These IDs should refer to an existing **qualifier** in the source annotation file, such as ``/locus_tag``, ``/protein_id`` or ``/standard_name``.
 
 List of ``refdbs``
 ------------------
 
-The second requierment of ``fannot-run`` is a list of ``refdbs`` previouly built with the ``uniprot-create-refdb`` program. These ``refdbs`` are 
+The second requirement of ``fannot-run`` is a list of ``refdbs`` previously built with the ``uniprot-create-refdb`` program. These ``refdbs`` are 
 identified by their IDs, which correspond to the ``-r`` argument value of ``uniprot-create-refdb``. They are provided as a coma-separated list
 to the the ``fannot-run`` program (see examples next section).
 
@@ -88,5 +88,5 @@ The ``fannot-run`` program provides one output file (``-o``), which is a tabulat
 .. important::
 
     Before copying these generated annotation in the final annotation files (see :ref:`Copy annotation in sequence files <Copy annotation in sequence files>`),
-    we highly recommand an inspection of the tabulated file to check possible issues or to evaluate if matching parameters have to be refined. It
+    we highly recommend an inspection of the tabulated file to check possible issues or to evaluate if matching parameters have to be refined. It
     is also possible to edit manually specific annotations if required.

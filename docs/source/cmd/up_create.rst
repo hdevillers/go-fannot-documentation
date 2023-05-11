@@ -32,7 +32,7 @@ Arguments of ``uniprot-create-refdb``
 | ``-d`` or |br|   | None    | Yes       | Directory that contains the ``refdbs``.                  |
 | ``-refdb-dir``   |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-e`` or |br|   | False   | No        | Boolean arguement indicating that the ``refdb`` can |br| |
+| ``-e`` or |br|   | False   | No        | Boolean argument indicating that the ``refdb`` can |br|  |
 | ``-equal``       |         |           | contain genes that are in the genome to be annotated.    |
 +------------------+---------+-----------+----------------------------------------------------------+
 | ``-w`` or |br|   | False   | No        | Boolean argument indicating that entries from the |br|   |

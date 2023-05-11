@@ -3,11 +3,11 @@ Refine datasets
 
 It is possible to use directly a complete dataset downloaded from **UniProt** (see the :ref:`Retrieve datasets <Retrieve datasets>` section).
 However, working with a single large reference database will require a lot of memory and computation time.
-In addition, it can result in less consistant annotations as these large datasets contain entries 
+In addition, it can result in less consistent annotations as these large datasets contain entries 
 with variable annotation quality and from a wide range of organisms.
 
 **go-FAnnoT** offers the possibility to split these large datasets into smaller ones according to 
-different criteria (eg., taxonomy, annotation completness, experimental evidence, etc.), and then
+different criteria (eg., taxonomy, annotation completeness, experimental evidence, etc.), and then
 to build a hierarchy between these different sub-datasets.
 
 Thus, for example, let's say that we have to annotation the protein coding genes of the
@@ -19,7 +19,7 @@ yeast species *Saccharomyces uvarum*. One possible dataset hierarchy could be:
 #. All the **Swiss-Prot** entries (excluding those from the three previous datasets) from the *Saccharomycetacea* family, **without experimental evidence**,
 #. All the **TrEMBL** entries from *Saccharomycetacea* family.
 
-Such a strategy will produce a more consistant and robust functional annotations.
+Such a strategy will produce a more consistent and robust functional annotations.
 
 **go-FAnnoT** provides two programs to refine datasets from **UniProt**: ``uniprot-subset`` and ``uniprot-prune``.
 
@@ -55,11 +55,11 @@ for the taxonomy, the gene description and the protein existence evidence. The
 corresponding arguments are the following:
 
 * ``-t``: keeping instruction for taxonomy,
-* ``-T``: skipping instrunction for taxonomy,
+* ``-T``: skipping instruction for taxonomy,
 * ``-d``: keeping instruction for gene description,
-* ``-D``: skipping instrunction for gene description,
+* ``-D``: skipping instruction for gene description,
 * ``-e``: keeping instruction for protein existence evidence,
-* ``-E``: skipping instrunction for protein existence evidence.
+* ``-E``: skipping instruction for protein existence evidence.
 
 Thus, for example, to extract all the entries associated to the genus *Saccharomyces*:
 
@@ -67,7 +67,7 @@ Thus, for example, to extract all the entries associated to the genus *Saccharom
 
     uniprot-subset -i fungi.dat.gz -o saccharomyces.dat.gz -t "Saccharomyces"
 
-To exclude the species *S. cerevisiae* from the prévious selection:
+To exclude the species *S. cerevisiae* from the previous selection:
 
 .. code-block:: console
 
@@ -91,7 +91,7 @@ entries with protein existence evidence score of 5 are discarded.
 .. important::
 
     *Skipping* instructions are stronger than *keeping* instructions. It means that, 
-    even if an entrie fits the *keeping* instruction, if it is also concerned by the 
+    even if an entry fits the *keeping* instruction, if it is also concerned by the 
     *skipping* instruction, then it will be discard.
 
 The power of regular expressions
@@ -125,7 +125,7 @@ However, the following instruction will return an empty output file:
 
 The expression ``"12"`` simply means the value "12", and hence, no match will be found.
 
-Regular expressions allow to build quite complexe queries, such as:
+Regular expressions allow to build quite complex queries, such as:
 
 .. code-block:: console
 
@@ -161,5 +161,5 @@ Here is the command to apply these filters on a dataset:
 
     uniprot-prune -i proteins.dat.gz -o pruned.dat.gz -m -d -f
 
-Pruning datasets generally result in more consistant annotation transfer, especially
+Pruning datasets generally result in more consistent annotation transfer, especially
 when including data from **TrEMBL**.

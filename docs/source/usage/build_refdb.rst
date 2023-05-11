@@ -40,7 +40,7 @@ Here are the steps to build the three corresponding ``refdb``;
         uniprot-create-refdb -i Sacch_expval.dat.gz -r Sacch_expval -d my_refdb \
             -D "Saccharomycetaceae family, experimental validation" -w 
 
-    * ``-w`` indicates that entries from this dataset can **overwrite** matches found with entries from previsou datasets.
+    * ``-w`` indicates that entries from this dataset can **overwrite** matches found with entries from previous datasets.
 
 #. Create the last ``refdb`` with the third dataset:
 
@@ -57,8 +57,8 @@ At that step, the three ``refdb`` are created and can be used to run the main sc
     The different options ``-w`` and ``-u`` have to be used according to the strategy 
     chosen to find gene functions. More details are given in the next section: :ref:`Formating rules <Formating rules>`.
 
-A last option can be activated in a particuler case: if the genes we want to annotate are
-possibly present in the retrieved dataset. This can occure, for example, if specific genes have been
+A last option can be activated in a particular case: if the genes we want to annotate are
+possibly present in the retrieved dataset. This can occur, for example, if specific genes have been
 published before the release of the complete genome annotation. In that case, ``uniprot-create-refdb``
 should be run with the boolean argument ``-e`` (or ``-equal``). With that option, all the input genes that
 have a 100% identity match with a ``refdb`` entry will be directly linked to the corresponding **UniProt** entry.

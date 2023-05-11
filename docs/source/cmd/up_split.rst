@@ -4,7 +4,7 @@
 Description of ``uniprot-split``
 ********************************
 
-This programme splits an **UniProt** data file into *n* files. It can be used to optimize some data treatments.
+This program splits an **UniProt** data file into *n* files. It can be used to optimize some data treatments.
 
 Usage of ``uniprot-split``
 **************************

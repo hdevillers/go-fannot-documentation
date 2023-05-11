@@ -8,9 +8,9 @@ About
 Briefly, the workflow consists in:
 
 * Building consistent reference databases, extracting data from **UniProt** databases or from other resources.
-* Comparing an input proteome (fasta file with multiple protein entries) to annotate againts the selected reference dabases, using both **local** and **global** sequence alignment tools.
-* Formating annotation information using customizable formating rules.
-* (Optionaly) completing annotation with **InterProScan** predictions.
+* Comparing an input proteome (fasta file with multiple protein entries) to annotate against the selected reference databases, using both **local** and **global** sequence alignment tools.
+* Formatting annotation information using customizable formatting rules.
+* (Optionally) completing annotation with **InterProScan** predictions.
 * Producing standard sequence annotation files (eg, **embl**, **genbank**).
 
 It is written in `Go`. 

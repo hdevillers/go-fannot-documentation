@@ -4,7 +4,7 @@
 Description of ``uniprot-prune``
 ********************************
 
-This programme prunes (filters) an **UniProt** data file according to different criteria.
+This program prunes (filters) an **UniProt** data file according to different criteria.
 
 Usage of ``uniprot-prune``
 **************************
@@ -30,13 +30,13 @@ Arguments of ``uniprot-prune``
 | ``-o`` or |br|   | None    | Yes       | Output **UniProt** pruned data file.                     |
 | ``-output``      |         |           |                                                          |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-m`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
+| ``-m`` or |br|   | False   | No        | Boolean argument to keep only entries from ``refdb``     |
 | ``-methionine``  |         |           | that starts with a methionine.                           |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-d`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
+| ``-d`` or |br|   | False   | No        | Boolean argument to keep only entries from ``refdb``     |
 | ``-description`` |         |           | that has a short description (found at **DE** lines).    |
 +------------------+---------+-----------+----------------------------------------------------------+
-| ``-f`` or |br|   | False   | No        | Boolean arguement to keep only entries from ``refdb``    |
+| ``-f`` or |br|   | False   | No        | Boolean argument to keep only entries from ``refdb``     |
 | ``-function``    |         |           | that has a function description (found at **CC** lines). |
 +------------------+---------+-----------+----------------------------------------------------------+
 

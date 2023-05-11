@@ -4,7 +4,7 @@
 Description of ``fannot-run``
 *****************************
 
-This the main program that runs the different proteins alignments, identifying the putative best hits between
+This is the main program that runs the different proteins alignments, identifying the putative best hits between
 input proteins and the different ``refdbs``.
 
 Usage of ``fannot-run``

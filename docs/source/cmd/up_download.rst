@@ -25,7 +25,7 @@ Arguments of ``uniprot-download``
 | ``-s`` or |br|      | sprot   | No        | Data source. It can be either **sprot** to target |br|   |
 | ``-source``         |         |           | **UniProt** data or **trembl** for **TrEMBL** data.      |
 +---------------------+---------+-----------+----------------------------------------------------------+
-| ``-m`` or |br|      | us      | No        | Downlaod mirror. To see available download mirrors, |br| |
+| ``-m`` or |br|      | us      | No        | Download mirror. To see available download mirrors, |br| |
 | ``-mirror``         |         |           | use argument ``-list-mirror``.                           |
 +---------------------+---------+-----------+----------------------------------------------------------+
 | ``-o`` or |br|      | ./      | No        | Output directory.                                        |
