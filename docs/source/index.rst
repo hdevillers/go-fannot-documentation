@@ -22,7 +22,10 @@ It is written in `Go`.
 
    ./get_started/principles.rst
    ./get_started/install.rst
+   ./get_started/quick_start.rst
+   ./get_started/release_notes.rst
    ./get_started/how_cite.rst
+   ./get_started/bug_report.rst
    ./get_started/genomes.rst
 
 .. toctree::
@@ -55,9 +58,12 @@ It is written in `Go`.
    ./cmd/refdb_info.rst
    ./cmd/up_count.rst
    ./cmd/up_create.rst
+   ./cmd/fasta_create.rst
    ./cmd/up_download.rst
    ./cmd/up_prune.rst
    ./cmd/up_split.rst
    ./cmd/up_subset.rst
    ./cmd/annot_seqfile.rst
+   ./cmd/seqfile_fasta.rst
+   ./cmd/add_comments.rst
 
