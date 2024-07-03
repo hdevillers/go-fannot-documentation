@@ -4,7 +4,7 @@ Release notes
 Version 1.1.0
 -------------
 
-First completed version of the tools.
+First complete version of the tools.
 
 **Main functionalities**:
 

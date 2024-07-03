@@ -38,7 +38,7 @@ Here is the details of all the command arguments:
 
 .. important::
 
-    The minimal hit status refers to the ``Hit_sta`` parameters from the different matching rules, see :ref:`Formating rule <Formating rules>`).
+    The minimal hit status refers to the ``Hit_sta`` parameters from the different matching rules, see :ref:`Formatting rule <Formatting rules>`).
     For example, the default matching rules consist of two levels, *highly similar* with a hit status of **2** and *similar* with a hit status
     of **1**. If we consider that it is necessary to have a *highly similar* match to allow the transfer of the gene name, then the argument 
     ``-c`` of the ``AnnotationsToSeqFiles.py`` has to be set to 2.

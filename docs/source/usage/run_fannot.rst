@@ -36,7 +36,7 @@ A custom configuration file (optional)
 --------------------------------------
 
 The ``fannot-run`` program has a default configuration and hence, it is not necessary to provide a **JSON** file if the default configurations fit your needs.
-To write a custom configuration **JSON** file, check the :ref:`Formating rule <Formating rules>` section for details.
+To write a custom configuration **JSON** file, check the :ref:`Formatting rule <Formatting rules>` section for details.
 
 Running ``fannot-run``
 **********************
@@ -78,11 +78,11 @@ The ``fannot-run`` program provides one output file (``-o``), which is a tabulat
 * **RefName**: Gene name of the best hit,
 * **IPSID**: InterProScan Accession number(s) (coma separator), 
 * **IPSAnnot**: InterProScan domain description(s) (coma separator),
-* **Status**: Hit status (referring to ``Hit_sta`` value, see :ref:`Formating rule <Formating rules>`),
+* **Status**: Hit status (referring to ``Hit_sta`` value, see :ref:`Formatting rule <Formatting rules>`),
 * **Similarity**: Protein similarity computed on from the global alignment,
 * **LengthRatio**: Protein length ratio,
 * **DBID**: ID of the ``refdb`` that contains the best hit,
-* **HitNum**: The Blast hit number kept (referring to the parameter ``NbHitCheck``, see :ref:`Formating rule <Formating rules>`),
+* **HitNum**: The Blast hit number kept (referring to the parameter ``NbHitCheck``, see :ref:`Formatting rule <Formatting rules>`),
 * **OverWritten**: Indicates if the retained hit has overwritten another hit.
 
 .. important::

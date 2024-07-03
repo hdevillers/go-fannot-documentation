@@ -55,7 +55,7 @@ At that step, the three ``refdb`` are created and can be used to run the main sc
 
 .. important::
     The different options ``-w`` and ``-u`` have to be used according to the strategy 
-    chosen to find gene functions. More details are given in the next section: :ref:`Formating rules <Formating rules>`.
+    chosen to find gene functions. More details are given in the next section: :ref:`Formatting rules <Formatting rules>`.
 
 A last option can be activated in a particular case: if the genes we want to annotate are
 possibly present in the retrieved dataset. This can occur, for example, if specific genes have been

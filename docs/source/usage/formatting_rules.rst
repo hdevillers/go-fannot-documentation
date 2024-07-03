@@ -1,8 +1,8 @@
-Formating rules
-###############
+Formatting rules
+################
 
-This section deals with how the annotations will be formated in the final output.
-**go-FAnnoT** comes with default formating rules. However, these rules are highly
+This section deals with how the annotations will be formatted in the final output.
+**go-FAnnoT** comes with default formatting rules. However, these rules are highly
 customizable via a configuration file (in ``json`` format).
 
 Before presenting this ``json`` and how to custom it, it is necessary to introduce 
@@ -64,7 +64,7 @@ annotation will be:
 Qualifier templates
 *******************
 
-**go-FAnnoT** proposes a templating syntaxe to format the different information retrieved 
+**go-FAnnoT** proposes a templating syntax to format the different information retrieved 
 from the matching entry of a ``refdb``. Thus, for example, the default template for the gene name
 qualifier (``/gene``) is:
 
@@ -124,7 +124,7 @@ This will yield to this kind of annotation:
     then the template solver will return an empty string for the whole line. This is a solution to avoid mal-formed sentences in the annotation. Below
     is the solution to overcome this problem.
 
-Template can be divided into independant parts that can be filled or deleted depending on the availability of the data retrieved.
+Template can be divided into independent parts that can be filled or deleted depending on the availability of the data retrieved.
 We use the double pipe ``||`` to indicate in the template the junctions between parts. Thus, for
 example, the previous template can be adapted as follow:
 
@@ -199,7 +199,7 @@ The current version of **go-FAnnoT** proposes two **transformers**:
 
     Gene name to protein name transformer ``::GnPn`` follows the *Saccharomyces cerevisiae*
     genetic nomenclature. Thus, for example, *ACT1* is a gene locus name (upper case, italicized).
-    The corresponding protein name is Act1p (no italics, capitalied first letter, followed by a "p").
+    The corresponding protein name is Act1p (no italics, capitalized first letter, followed by a "p").
     Thus, considering the template ``{ShartDesc}::ToLwr::GnPn`` and the sentence ``Ribosome biogenesis protein BMS1``
     the output will be ``ribosome biogenesis protein Bms1p``. This may not fit the nomenclature of other organisms.
 
